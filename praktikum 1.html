@@ -1,28 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curriculum Vitae</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #e8e8e8;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Curriculum Vitae</h1>
-    <h2>Data Pribadi</h2>
-        <li>Nama : Abrar Wujedaan</li>
-        <li>NIM : F1G123001</li>
-        <li>Prodi: Ilmu Komputer</li>
-    <h2>Portfolio</h2>
-    <h3>Project</h3>
-    <ul>
-        <li>Web Manajement Keuangan: We Budget</li>
-        <li>Sistem Informasi Keuangan: Siuang</li>
-    </ul>
-    <h3>Sertifikat</h3>
-    <ul>
-        <li>DATA ANALISIS (MICRO SKILL)-DIGITAL TALENT SCHOLARSHIP</li>
-        <li>EXCEL ACCOUNTING 2–WORKSHEET, OPENING BALANCES, & SUBLEDGER-UDEMY</li>
-        <li>DATA SCIENCE MASTERY: COMPLETE DATA SCIENCE BOOTCAMP 2025-UDEMY</li>
-    </ul>
-    </body>
+    <div class="container">
+        <h1>Curriculum Vitae</h1>
+        
+        <h2>Data Pribadi</h2>
+        <ul>
+            <li><strong>Nama:</strong> Abrar Wujedaan</li>
+            <li><strong>NIM:</strong> F1G123001</li>
+            <li><strong>Prodi:</strong> Ilmu Komputer</li>
+        </ul>
+
+        <h2>Portfolio</h2>
+        <h3>Project</h3>
+        <ul>
+            <li><strong>We Budget:</strong> Web manajemen keuangan yang membantu pengguna dalam pencatatan dan analisis pengeluaran.</li>
+            <li><strong>Siuang:</strong> Sistem informasi keuangan untuk pencatatan transaksi dan laporan keuangan.</li>
+        </ul>
+
+        <h3>Sertifikat</h3>
+        <ul>
+            <li><strong>DATA ANALYSIS (MICRO SKILL) - Digital Talent Scholarship</strong> (2024)</li>
+            <li><strong>Excel Accounting 2 – Udemy</strong> (2023) - Memahami sistem pencatatan keuangan di Excel.</li>
+            <li><strong>Data Science Mastery - Udemy</strong> (2025) - Bootcamp lengkap tentang data science.</li>
+        </ul>
+    </div>
+</body>
 </html>
