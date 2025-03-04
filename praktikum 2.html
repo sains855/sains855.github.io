@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pilihan</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 300px; margin: 20px auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Pilih Opsi</h2>
+        
+        <!-- Select Dropdown -->
+        <label for="selectOption">Pilih Warna:</label>
+        <select id="selectOption">
+            <option value="Merah">Merah</option>
+            <option value="Biru">Biru</option>
+            <option value="Hijau">Hijau</option>
+        </select>
+        
+        <h3>Pilih Jenis Kelamin:</h3>
+        <!-- Radio Button -->
+        <input type="radio" name="gender" value="Laki-laki"> Laki-laki <br>
+        <input type="radio" name="gender" value="Perempuan"> Perempuan <br>
+        
+        <h3>Pilih Hobi:</h3>
+        <!-- Checkbox -->
+        <input type="checkbox" class="hobby" value="Membaca"> Membaca <br>
+        <input type="checkbox" class="hobby" value="Menulis"> Menulis <br>
+        <input type="checkbox" class="hobby" value="Olahraga"> Olahraga <br>
+        
+        <button onclick="getSelections()">Tampilkan Pilihan</button>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+        function getSelections() {
+            // Mengambil nilai dari select dropdown
+            let selectValue = document.getElementById("selectOption").value;
+            
+            // Mengambil nilai dari radio button yang dipilih
+            let genderOptions = document.getElementsByName("gender");
+            let genderValue = "";
+            for (let i = 0; i < genderOptions.length; i++) {
+                if (genderOptions[i].checked) {
+                    genderValue = genderOptions[i].value;
+                }
+            }
+            
+            // Mengambil nilai dari checkbox yang dipilih
+            let hobbies = document.getElementsByClassName("hobby");
+            let hobbyValues = [];
+            for (let i = 0; i < hobbies.length; i++) {
+                if (hobbies[i].checked) {
+                    hobbyValues.push(hobbies[i].value);
+                }
+            }
+            
+            // Menampilkan hasil
+            document.getElementById("result").innerHTML =
+                `<strong>Hasil Pilihan:</strong><br>
+                Warna: ${selectValue} <br>
+                Jenis Kelamin: ${genderValue || "Belum dipilih"} <br>
+                Hobi: ${hobbyValues.length > 0 ? hobbyValues.join(", ") : "Belum dipilih"}`;
+        }
+    </script>
+</body>
+</html>
