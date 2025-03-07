@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+#themeToggle {
+    background: #333;
+    color: white;
+    width: auto;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#themeToggle::before {
+    content: '🌙';
+    font-size: 18px;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode section {
+    background: #333;
+    color: #fff;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode #themeToggle {
+    background-color: yellow;
+    color: black;
+}
+
+.dark-mode #themeToggle::before {
+    content: '☀️';
+}
+
+section {
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffffff, #e6e6e6);
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    background: linear-gradient(135deg, #ffffff, #f8f8f8);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.project-img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notif {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.notif.show {
+    display: block;
+    opacity: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+    align-items: center;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+textarea {
+    height: 150px;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-container button {
+    max-width: 300px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+    border:none;
+}
+
+.dark-mode .project-card {
+    background: #444;
+    color: white;
+}
+
+.dark-mode .notif {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+footer {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+}
