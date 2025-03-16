@@ -212,7 +212,7 @@ section {
 
 #contactForm input,
 #contactForm textarea {
-    width: 90%; /* Menyesuaikan dengan lebar elemen di atas */
+    width: 90%;
     max-width: 800px;
     padding: 12px;
     font-size: 16px;
