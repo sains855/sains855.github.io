@@ -83,27 +83,70 @@ nav ul li a:hover {
     content: '☀️';
 }
 
-section {
-    max-width: 90%;
-    margin: 40px auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #ffffff, #e6e6e6);
-    border-radius: 15px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+.dark-mode .cv-header, .dark-mode .cv-title {
+    color: #1e90ff;
 }
 
-section:hover {
-    transform: scale(1.03);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+.dark-mode .cv-content, .dark-mode nav ul li a {
+    color: #ddd;
+}
+
+section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+    border: none;
+}
+
+.cv-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.cv-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cv-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.cv-content {
+    font-size: 16px;
+    color: #333;
 }
 
 .projects {
     display: flex;
-    justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .project-card {
@@ -111,8 +154,8 @@ section:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 300px;
+    width: 100%;
+    max-width: 350px;
     background: linear-gradient(135deg, #ffffff, #f8f8f8);
     border-radius: 15px;
     padding: 15px;
@@ -126,122 +169,130 @@ section:hover {
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.project-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
 .project-img {
     width: 100%;
-    height: 250px;
+    height: auto;
+    max-height: 200px;
     object-fit: contain;
     border-radius: 10px;
-    margin-top: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.notif {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.notif.show {
-    display: block;
-    opacity: 1;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: auto;
-    align-items: center;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-
-textarea {
-    height: 150px;
-}
-
-input:focus, textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 300px;
-    background: linear-gradient(90deg, #007bff, #0056b3);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: #0056b3;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.button-container button {
-    max-width: 300px;
-}
-
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 15px;
-    border:none;
 }
 
 .dark-mode .project-card {
     background: #444;
     color: white;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode .notif {
-    background: rgba(255, 255, 255, 0.8);
-    color: black;
+#contact {
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px; /* Sesuaikan dengan ukuran kartu di atas */
 }
+
+#contact h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 90%; /* Menyesuaikan dengan lebar elemen di atas */
+    max-width: 800px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+#contactForm textarea {
+    height: 150px;
+    resize: none;
+}
+
+#contactForm button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 50%; /* Lebar tombol agar sesuai dengan ukuran input */
+    max-width: 400px;
+}
+
+#contactForm button:hover {
+    background: #0056b3;
+}
+
 
 footer {
-    background: #007bff;
+    background: #0056b3;
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 20px;
+    margin-top: 40px;
     font-size: 14px;
+}
+.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-mode section,
+.dark-mode #contact {
+    background: #2a2a2a; /* Warna abu-abu gelap tapi tidak terlalu pekat */
+    color: white;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode input,
+.dark-mode textarea {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark-mode button {
+    background: #007BFF;
+    color: white;
+}
+
+.dark-mode button:hover {
+    background: #0056b3;
+}
+
+.dark-mode footer {
+    background: #111;
+    color: #fff;
+}
+
+
+.dark-mode footer {
+    background: #000;
+    color: #fff;
 }

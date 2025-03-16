@@ -22,65 +22,68 @@
         <button id="themeToggle"></button>
     </header>
 
-    <section id="about">
-        <img src="./img/profile.jpg" alt="Foto Profil"
-            class="profile-photo">
-        <h1>Tentang Saya</h1>
-        <p>Saya adalah seorang mahasiswa Ilmu Komputer yang sedang mendalami web development dan data sains. Dengan latar belakang akademik di bidang teknologi, 
-            saya tertarik untuk mengembangkan aplikasi web yang efisien serta menganalisis data untuk mendapatkan wawasan yang bernilai. 
-            Saat ini, saya terus belajar dan mengeksplorasi teknologi terbaru untuk meningkatkan keterampilan saya dalam pengembangan perangkat lunak dan analisis data.</p>
-    </section>
-
-    <section id="resume">
-        <h1>Riwayat Hidup</h1>
-        <h3>Pendidikan</h3>
-        <ul>
-            <p> <strong>Universitas Haluoleo</strong> - S1 Ilmu Komputer (2023 - Sekarang)</p>
-            <p><strong>SMA Negeri 1 Mowewe</strong> - Jurusan MIPA (2020 - 2023)</p>
-        </ul>
-        <h3>Pengalaman</h3>
-        <ul>
-            <p><strong>Freelancer Data Analyst dan Web Developer</strong> - Fiverr (2024 - Sekarang)</p>
-            <p><strong>Asisten Dosen Algoritma Pemrograman</strong> - Universitas Haluoleo (2023 - 2024)</p>
-        </ul>
-    </section>
-
-    <section id="portfolio">
-        <h1>Portofolio</h1>
-        <h2>Proyek</h2>
-        <div class="projects">
-            <div class="project-card">
-                <img class = "project-img" src="./img/Screenshot 2024-10-13 123849.png">
-                <p class="project-title">Home Website Manajemen Keuangan (WEBUDGET)</p>
+    <div class="cv-container" id="cv-content">
+        <section id="about">
+            <img src="./img/profile.jpg" alt="Foto Profil" class="profile-photo">
+            <div class="cv-header">Tentang Saya</div>
+            <div class="cv-content">
+                <p>Saya adalah seorang mahasiswa Ilmu Komputer yang sedang mendalami web development dan data sains. Dengan latar belakang akademik di bidang teknologi, saya tertarik untuk mengembangkan aplikasi web yang efisien serta menganalisis data untuk mendapatkan wawasan yang bernilai.</p>
             </div>
-            <div class="project-card">
-                <img class = "project-img" src="./img/image.png">
-                <p class="project-title">Dashboard Website Manajemen Keuangan (WEBUDGET)</p>
-            </div>
-        </div>
-        <h2>Pencapaian</h2>
-        <div class="projects">
-            <div class="project-card">
-                <img class = "project-img" src="./img/Abrar Wujedaan.png">
-                <p class="project-title">Partisipan Internasional Webinar Microsoft Excel - Smarthpath</p>
-            </div>
-            <div class="project-card">
-                <img class = "project-img" src="./img/Sertifikat data sains_001.png">
-                <p class="project-title">Bootcamp Data Science Mastery 2025 - Udemy</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <h1>Kontak</h1>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="Nama Anda" required>
-            <textarea id="message" placeholder="Pesan Anda" required></textarea>
-            <button type="submit">Kirim via WhatsApp</button>
-        </form>
-    </section>
+        <section id="resume">
+            <div class="cv-header">Riwayat Hidup</div>
+            <div class="cv-section">
+                <div class="cv-title">Pendidikan</div>
+                <div class="cv-content">
+                    <p><strong>Universitas Haluoleo</strong> - S1 Ilmu Komputer (2023 - Sekarang)</p>
+                    <p><strong>SMA Negeri 1 Mowewe</strong> - Jurusan MIPA (2020 - 2023)</p>
+                </div>
+            </div>
+            <div class="cv-section">
+                <div class="cv-title">Pengalaman</div>
+                <div class="cv-content">
+                    <p><strong>Freelancer Data Analyst dan Web Developer</strong> - Fiverr (2024 - Sekarang)</p>
+                    <p><strong>Asisten Dosen Algoritma Pemrograman</strong> - Universitas Haluoleo (2023 - 2024)</p>
+                </div>
+            </div>
+        </section>
 
-    <div id="notif" class="notif">Notifikasi</div>
+        <section id="portfolio">
+            <div class="cv-header">Portofolio</div>
+            <div class="cv-title">Proyek</div>
+            <div class="projects">
+                <div class="project-card">
+                    <img class="project-img" src="./img/Screenshot 2024-10-13 123849.png">
+                    <p class="project-title">Home Website Manajemen Keuangan (WEBUDGET)</p>
+                </div>
+                <div class="project-card">
+                    <img class="project-img" src="./img/image.png">
+                    <p class="project-title">Dashboard Website Manajemen Keuangan (WEBUDGET)</p>
+                </div>
+            </div>
+            <div class="cv-title">Pencapaian</div>
+            <div class="projects">
+                <div class="project-card">
+                    <img class="project-img" src="./img/Abrar Wujedaan.png">
+                    <p class="project-title">Partisipan Internasional Webinar Microsoft Excel - Smarthpath</p>
+                </div>
+                <div class="project-card">
+                    <img class="project-img" src="./img/Sertifikat data sains_001.png">
+                    <p class="project-title">Bootcamp Data Science Mastery 2025 - Udemy</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>Kontak</h1>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Nama Anda" required>
+                <textarea id="message" placeholder="Pesan Anda" required></textarea>
+                <button type="submit">Kirim via WhatsApp</button>
+            </form>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 ABRAR WUJEDAAN</p>
