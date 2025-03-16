@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     themeToggle.addEventListener("click", function () {
         body.classList.toggle("dark-mode");
         if (body.classList.contains("dark-mode")) {
-            themeToggle.innerHTML = "Mode Terang";
+            themeToggle.innerHTML = "";
         } else {
-            themeToggle.innerHTML = "Mode Gelap";
+            themeToggle.innerHTML = "";
         }
         showNotification("Mode telah diubah");
     });
