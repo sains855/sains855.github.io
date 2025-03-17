@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>CV - ABRAR WUJEDAAN</title>
     <link rel="stylesheet" href="./Style/CV.css">
 </head>
@@ -80,14 +81,14 @@
             <form id="contactForm">
                 <input type="text" id="name" placeholder="Nama Anda" required>
                 <textarea id="message" placeholder="Pesan Anda" required></textarea>
-                <button type="submit">Kirim via WhatsApp</button>
+                <button type="button" id="sendButton">Kirim via WhatsApp</button>
             </form>
         </section>
     </div>
-
+    <div id="notif"></div>
     <footer>
         <p>&copy; 2025 ABRAR WUJEDAAN</p>
-    </footer> 
+    </footer>
 
     <script src="./Script/CV.js"></script>
 </body>

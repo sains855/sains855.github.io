@@ -15,22 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
         showNotification("Mode telah diubah");
     });
 
-    // Form submission to WhatsApp
-    contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const name = document.getElementById("name").value;
-        const message = document.getElementById("message").value;
-        const phoneNumber = "6282255040653"; // Ganti dengan nomor tujuan
-        
-        if (name && message) {
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=Halo, saya ${encodeURIComponent(name)}.%0A${encodeURIComponent(message)}`;
-            window.open(whatsappURL, "_blank");
-            showNotification("Pesan dikirim ke WhatsApp!");
-        } else {
-            showNotification("Mohon isi semua kolom!");
-        }
-    });
-
     // Function to show notification
     function showNotification(text) {
         notif.textContent = text;
@@ -45,4 +29,39 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 500);
         }, 2000);
     }
+    
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const sendButton = document.getElementById("sendButton");
+
+    sendButton.addEventListener("click", function () {
+        const name = document.getElementById("name").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const phoneNumber = "6282255040653"; // Ganti dengan nomor tujuan
+
+        if (name && message) {
+            // Tampilkan popup SweetAlert
+            Swal.fire({
+                title: "Pesan Terkirim!",
+                text: `Terima kasih, ${name}! Pesan Anda berhasil terkirim.`,
+                icon: "success",
+                confirmButtonText: "Oke"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // WhatsApp hanya terbuka setelah "Oke" ditekan
+                    const whatsappURL = `https://wa.me/${phoneNumber}?text=Halo, saya ${encodeURIComponent(name)}.%0A${encodeURIComponent(message)}`;
+                    window.open(whatsappURL, "_blank");
+                }
+            });
+        } else {
+            Swal.fire({
+                title: "Gagal!",
+                text: "Mohon isi semua kolom sebelum mengirim pesan!",
+                icon: "error",
+                confirmButtonText: "Oke"
+            });
+        }
+    });
+});
+
+
