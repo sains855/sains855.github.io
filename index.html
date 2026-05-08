@@ -1,96 +1,295 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrar Wujedaan — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>CV - ABRAR WUJEDAAN</title>
-    <link rel="stylesheet" href="./Style/CV.css">
+    <link rel="stylesheet" href="style/CV.css">
 </head>
-
 <body>
-    <header>
-        <h1>CV - ABRAR WUJEDAAN</h1>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+
+<!-- Noise Overlay -->
+<div class="noise"></div>
+
+<!-- ───── NAVBAR ───── -->
+<header id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="logo">AW<span>.</span></a>
         <nav>
-            <ul>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#resume">Riwayat Hidup</a></li>
-                <li><a href="#portfolio">Portofolio</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
+            <a href="#about">Tentang</a>
+            <a href="#skills">Keahlian</a>
+            <a href="#portfolio">Portofolio</a>
+            <a href="#contact">Kontak</a>
         </nav>
-        <button id="themeToggle"></button>
-    </header>
-
-    <div class="cv-container" id="cv-content">
-        <section id="about">
-            <img src="./img/profile.jpg" alt="Foto Profil" class="profile-photo">
-            <div class="cv-header">Tentang Saya</div>
-            <div class="cv-content">
-                <p>Saya adalah seorang mahasiswa Ilmu Komputer yang sedang mendalami web development dan data sains. Dengan latar belakang akademik di bidang teknologi, saya tertarik untuk mengembangkan aplikasi web yang efisien serta menganalisis data untuk mendapatkan wawasan yang bernilai.</p>
-            </div>
-        </section>
-
-        <section id="resume">
-            <div class="cv-header">Riwayat Hidup</div>
-            <div class="cv-section">
-                <div class="cv-title">Pendidikan</div>
-                <div class="cv-content">
-                    <p><strong>Universitas Haluoleo</strong> - S1 Ilmu Komputer (2023 - Sekarang)</p>
-                    <p><strong>SMA Negeri 1 Mowewe</strong> - Jurusan MIPA (2020 - 2023)</p>
-                </div>
-            </div>
-            <div class="cv-section">
-                <div class="cv-title">Pengalaman</div>
-                <div class="cv-content">
-                    <p><strong>Freelancer Data Analyst dan Web Developer</strong> - Fiverr (2024 - Sekarang)</p>
-                    <p><strong>Asisten Dosen Algoritma Pemrograman</strong> - Universitas Haluoleo (2023 - 2024)</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio">
-            <div class="cv-header">Portofolio</div>
-            <div class="cv-title">Proyek</div>
-            <div class="projects">
-                <div class="project-card">
-                    <img class="project-img" src="./img/Screenshot 2024-10-13 123849.png">
-                    <p class="project-title">Home Website Manajemen Keuangan (WEBUDGET)</p>
-                </div>
-                <div class="project-card">
-                    <img class="project-img" src="./img/image.png">
-                    <p class="project-title">Dashboard Website Manajemen Keuangan (WEBUDGET)</p>
-                </div>
-            </div>
-            <div class="cv-title">Pencapaian</div>
-            <div class="projects">
-                <div class="project-card">
-                    <img class="project-img" src="./img/Abrar Wujedaan.png">
-                    <p class="project-title">Partisipan Internasional Webinar Microsoft Excel - Smarthpath</p>
-                </div>
-                <div class="project-card">
-                    <img class="project-img" src="./img/Sertifikat data sains_001.png">
-                    <p class="project-title">Bootcamp Data Science Mastery 2025 - Udemy</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h1>Kontak</h1>
-            <form id="contactForm">
-                <input type="text" id="name" placeholder="Nama Anda" required>
-                <textarea id="message" placeholder="Pesan Anda" required></textarea>
-                <button type="button" id="sendButton">Kirim via WhatsApp</button>
-            </form>
-        </section>
+        <button id="themeToggle" aria-label="Toggle theme">
+            <span class="toggle-icon">☀</span>
+        </button>
     </div>
-    <div id="notif"></div>
-    <footer>
-        <p>&copy; 2025 ABRAR WUJEDAAN</p>
-    </footer>
+</header>
 
-    <script src="./Script/CV.js"></script>
+<!-- ───── HERO ───── -->
+<section id="about" class="hero">
+    <div class="hero-bg-text">ABRAR</div>
+    <div class="hero-content">
+        <div class="hero-left">
+            <div class="tag-pill reveal">
+                <span class="dot"></span> Tersedia untuk proyek baru
+            </div>
+            <h1 class="hero-title reveal">
+                <span class="line">Web</span>
+                <span class="line accent-line">Developer</span>
+                <span class="line">&amp; Data Analyst</span>
+            </h1>
+            <p class="hero-desc reveal">
+                Mahasiswa Ilmu Komputer Universitas Halu Oleo. Berfokus pada pengembangan web modern dan analisis data berukuran besar dengan pendekatan yang efisien dan terstruktur.
+            </p>
+            <div class="hero-actions reveal">
+                <a href="#portfolio" class="btn-primary">Lihat Proyek</a>
+                <a href="#contact" class="btn-ghost">Hubungi Saya</a>
+            </div>
+            <div class="social-row reveal">
+                <a href="#" aria-label="GitHub" class="soc-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn" class="soc-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="#" aria-label="Instagram" class="soc-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="hero-right reveal">
+            <div class="photo-frame">
+                <img src="./img/profile.jpg" alt="Abrar Wujedaan" class="profile-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')">
+                <div class="photo-deco deco-1"></div>
+                <div class="photo-deco deco-2"></div>
+                <div class="photo-badge">
+                    <div class="badge-inner">
+                        <span class="badge-num">2+</span>
+                        <span class="badge-label">Tahun Pengalaman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-hint">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+<!-- ───── STATS ───── -->
+<section class="stats-bar">
+    <div class="stat-item reveal">
+        <span class="stat-num" data-target="4">0</span>
+        <span class="stat-label">Proyek Selesai</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item reveal">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">Sertifikasi</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item reveal">
+        <span class="stat-num" data-target="2">0</span>
+        <span class="stat-label">Tahun Kuliah</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item reveal">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">Semangat Belajar</span>
+    </div>
+</section>
+
+<!-- ───── SKILLS ───── -->
+<section id="skills" class="section">
+    <div class="section-header reveal">
+        <span class="section-tag">Keahlian</span>
+        <h2 class="section-title">Apa yang Saya Bisa</h2>
+    </div>
+    <div class="skills-layout">
+        <div class="skills-left reveal">
+            <div class="edu-card">
+                <div class="edu-icon">🎓</div>
+                <div class="edu-info">
+                    <h4>Universitas Halu Oleo</h4>
+                    <p>S1 Ilmu Komputer</p>
+                    <span>2023 – Sekarang</span>
+                </div>
+            </div>
+            <div class="edu-card">
+                <div class="edu-icon">🔬</div>
+                <div class="edu-info">
+                    <h4>Asisten Laboratorium</h4>
+                    <p>Algoritma & Pemrograman</p>
+                    <span>2023 – 2024</span>
+                </div>
+            </div>
+        </div>
+        <div class="skills-right">
+            <div class="skill-group reveal">
+                <h4>Frontend</h4>
+                <div class="skill-tags">
+                    <span>HTML/CSS</span><span>JavaScript</span><span>Bootstrap</span><span>Tailwind</span>
+                </div>
+            </div>
+            <div class="skill-group reveal">
+                <h4>Backend</h4>
+                <div class="skill-tags">
+                    <span>Laravel</span><span>Flask</span><span>Python</span><span>PHP</span>
+                </div>
+            </div>
+            <div class="skill-group reveal">
+                <h4>Data & Tools</h4>
+                <div class="skill-tags">
+                    <span>Big Data</span><span>MySQL</span><span>Excel</span><span>Pandas</span><span>Git</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ───── PORTFOLIO ───── -->
+<section id="portfolio" class="section">
+    <div class="section-header reveal">
+        <span class="section-tag">Portofolio</span>
+        <h2 class="section-title">Proyek & Sertifikasi</h2>
+    </div>
+    <div class="portfolio-grid">
+
+        <div class="port-card featured reveal">
+            <div class="port-img-wrap">
+                <img src="./img/image.png" alt="WEBUDGET" onerror="this.closest('.port-img-wrap').classList.add('img-fallback'); this.style.display='none'">
+                <div class="img-fallback-ui">
+                    <span>💰</span>
+                </div>
+            </div>
+            <div class="port-content">
+                <div class="port-top">
+                    <span class="port-tag">Laravel</span>
+                    <span class="port-year">2024</span>
+                </div>
+                <h3>WEBUDGET Dashboard</h3>
+                <p>Sistem manajemen keuangan pribadi berbasis web. Dibangun dengan Laravel + MySQL, fitur laporan & visualisasi data real-time.</p>
+                <div class="port-links">
+                    <a href="#" class="port-btn">Lihat Detail →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="port-card reveal">
+            <div class="port-img-wrap">
+                <img src="./img/cisco-cert.png" alt="Cisco" onerror="this.closest('.port-img-wrap').classList.add('img-fallback'); this.style.display='none'">
+                <div class="img-fallback-ui"><span>📊</span></div>
+            </div>
+            <div class="port-content">
+                <div class="port-top">
+                    <span class="port-tag cert">Sertifikat</span>
+                    <span class="port-year">2024</span>
+                </div>
+                <h3>Data Analytics Essentials</h3>
+                <p>Cisco Networking Academy — Big Data Ilkom UHO.</p>
+                <a href="#" class="port-btn">Lihat Sertifikat →</a>
+            </div>
+        </div>
+
+        <div class="port-card reveal">
+            <div class="port-img-wrap">
+                <img src="./img/Abrar Wujedaan.png" alt="Excel Webinar" onerror="this.closest('.port-img-wrap').classList.add('img-fallback'); this.style.display='none'">
+                <div class="img-fallback-ui"><span>📑</span></div>
+            </div>
+            <div class="port-content">
+                <div class="port-top">
+                    <span class="port-tag intl">International</span>
+                    <span class="port-year">2024</span>
+                </div>
+                <h3>Microsoft Excel Webinar</h3>
+                <p>Partisipan Internasional — Smartpath Global.</p>
+                <a href="#" class="port-btn">Lihat Sertifikat →</a>
+            </div>
+        </div>
+
+        <div class="port-card reveal">
+            <div class="port-img-wrap">
+                <img src="./img/Sertifikat data sains_001.png" alt="Data Science" onerror="this.closest('.port-img-wrap').classList.add('img-fallback'); this.style.display='none'">
+                <div class="img-fallback-ui"><span>🧪</span></div>
+            </div>
+            <div class="port-content">
+                <div class="port-top">
+                    <span class="port-tag udemy">Udemy</span>
+                    <span class="port-year">2025</span>
+                </div>
+                <h3>Data Science Mastery</h3>
+                <p>Bootcamp Mastery 2025 — Machine Learning & AI Fundamentals.</p>
+                <a href="#" class="port-btn">Lihat Sertifikat →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ───── CONTACT ───── -->
+<section id="contact" class="section contact-section">
+    <div class="contact-inner">
+        <div class="contact-left reveal">
+            <span class="section-tag">Kontak</span>
+            <h2>Mari Bekerja<br>Sama 👋</h2>
+            <p>Punya proyek menarik atau pertanyaan? Jangan ragu untuk menghubungi saya. Saya selalu terbuka untuk diskusi dan kolaborasi baru.</p>
+            <div class="contact-info">
+                <div class="ci-item">
+                    <span class="ci-icon">📍</span>
+                    <span>Kendari, Sulawesi Tenggara</span>
+                </div>
+                <div class="ci-item">
+                    <span class="ci-icon">🎓</span>
+                    <span>Universitas Halu Oleo</span>
+                </div>
+                <div class="ci-item">
+                    <span class="ci-icon">💬</span>
+                    <span>WhatsApp: +62 822-5504-0653</span>
+                </div>
+            </div>
+        </div>
+        <div class="contact-right reveal">
+            <div class="contact-form-card">
+                <div class="input-wrap">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="name" placeholder="John Doe">
+                </div>
+                <div class="input-wrap">
+                    <label>Pesan</label>
+                    <textarea id="message" placeholder="Halo Abrar, saya ingin..."></textarea>
+                </div>
+                <button id="sendButton" class="send-btn">
+                    <span>Kirim via WhatsApp</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.004 22l1.352-4.968A9.954 9.954 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.954 9.954 0 0 1-5.03-1.355L2.004 22zM8.391 7.308a.961.961 0 0 0-.371.1 1.293 1.293 0 0 0-.294.228c-.12.113-.188.211-.261.306A2.729 2.729 0 0 0 6.9 9.62c.002.49.13.967.33 1.413.409.902 1.082 1.857 1.971 2.742.214.213.423.427.648.626a9.448 9.448 0 0 0 3.84 2.046l.569.087c.185.01.37-.004.556-.013a1.99 1.99 0 0 0 .833-.231 4.83 4.83 0 0 0 .383-.22s.043-.028.125-.09c.135-.1.218-.171.33-.288.083-.086.155-.187.21-.302.078-.163.156-.474.188-.733.024-.198.017-.306.014-.373-.004-.107-.093-.218-.19-.265l-.582-.261s-.87-.379-1.401-.621a.498.498 0 0 0-.177-.041.482.482 0 0 0-.378.127v-.002c-.005 0-.072.057-.795.933a.35.35 0 0 1-.368.13 1.416 1.416 0 0 1-.191-.066c-.124-.052-.167-.072-.252-.109l-.005-.002a6.01 6.01 0 0 1-1.57-1c-.126-.11-.243-.23-.363-.346a6.296 6.296 0 0 1-1.02-1.268l-.059-.095a.923.923 0 0 1-.102-.205c-.038-.147.061-.265.061-.265s.243-.266.356-.41a4.38 4.38 0 0 0 .263-.373c.118-.19.155-.385.093-.536-.28-.684-.57-1.365-.868-2.041-.059-.134-.234-.23-.393-.249-.054-.006-.108-.012-.162-.016a3.385 3.385 0 0 0-.403.004z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+    <div class="footer-inner">
+        <span class="foot-logo">AW<span>.</span></span>
+        <p>© 2026 Abrar Wujedaan — All rights reserved.</p>
+        <div class="foot-socials">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script/CV.js"></script>
 </body>
-
 </html>
